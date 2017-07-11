@@ -1,0 +1,9 @@
+<%= form_for @user do |f| %>
+    <%= f.label :bank_code %>
+    <%= f.text_field :bank_code, class: 'form-control', placeholder: 'Minimum 5 characters' %>
+    
+    <%= f.label :card_number %>
+    <%= f.text_area :card_number, class: 'form-control', placeholder: 'Minimum 10 characters' %>
+    
+    <%= f.submit "Continue" %>
+<% end %>

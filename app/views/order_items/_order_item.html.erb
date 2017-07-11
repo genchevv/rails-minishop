@@ -1,0 +1,10 @@
+<h3><%= product.title %></h3>
+<%= form_for @order_item, remote: true do |f| %>
+    <%= number_to_currency product.price %>
+    
+    <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
+    <%= f.hidden_field :price, value: product.price %>
+    <%= f.hidden_field :product_id, value: product.id %>
+    
+    <%= f.submit "Add to Cart", class: 'btn btn-primary' %>
+<% end %>

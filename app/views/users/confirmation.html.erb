@@ -1,0 +1,35 @@
+<div class="card text-center">
+  <div class="card-header">
+    <h1>To sum up</h1>
+  </div>
+  <div class="card-block">
+    <h2 class="card-title">Your order details</h2>
+    <p class="card-text">
+        <% @order_items.each do |order_item| %>
+            <h4>Product title: <%= order_item.product.title %></h4>
+            <p>Quantity: <%= order_item.quantity %></p>
+            <p>Unit Price: <%= order_item.price %></p>
+        <% end %>
+        
+        <h3>Total: <%= @order.total_price %></h3>
+    </p>
+    
+    <h2 class="card-title">Shipping details</h2>
+    <p class="card-text">
+        <p>First Name: <%= @user.first_name %></p>
+        <p>Last Name: <%= @user.last_name %></p>
+        <p>Email: <%= @user.email %></p>
+        <p>Address: <%= @user.address %></p>
+        <p>City: <%= @user.city %></p>
+        <p>Zip Code: <%= @user.zip_code %></p>
+    </p>
+    
+    <h2 class="card-title">Payment details</h2>
+    <p class="card-text">
+        <p>Bank Code: <%= @user.bank_code %></p>
+        <p>Card Number: <%= @user.card_number %></p>
+    </p>
+    
+    <%= link_to "Finish", feedback_path, class: 'btn btn-primary' %>
+  </div>
+</div>

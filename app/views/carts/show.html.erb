@@ -1,0 +1,10 @@
+<%= render 'cart' %>
+
+<% if @order.order_items.size != 0 %>
+    <%= form_for @order, remote: true do |f| %>
+        <%= f.hidden_field :total_price, value: @order.order_items.collect { |item| item.quantity * item.price }.sum %>
+        
+        <p>Total: <%= @order.order_items.collect { |item| item.quantity * item.price }.sum %></p>
+        <%= f.submit "Order", class: 'btn btn-primary' %>
+    <% end %>
+<% end %>

@@ -1,0 +1,21 @@
+<div class='logo'>
+	<h1>Mini Shop</h1>
+</div>
+
+<ul class="custom-nav nav nav-tabs">
+	<li class="<%= active?(root_path) %>">
+		<%= link_to "Shop", root_path %>
+	</li>
+	
+	<li class="<%= active?(products_path) %>">
+		<%= link_to "Products", products_path %>
+	</li>
+	
+	<li class="<%= active?(orders_path) %>">
+		<%= link_to "Your Orders", orders_path %>
+	</li>
+	
+	<li class="pull-right <%= active?(cart_path) %>">
+		<%= render 'shared/cart_information' %>
+	</li>
+</ul>

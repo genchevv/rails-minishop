@@ -1,0 +1,30 @@
+<%= form_for @user do |f| %>
+    
+    <%= f.label :first_name %>
+    <em>*</em>
+    <%= f.text_field :first_name, class: 'form-control' %>
+    
+    <%= f.label :last_name %>
+    <em>*</em>
+    <%= f.text_area :last_name, class: 'form-control' %>
+    
+    <%= f.label :email %>
+    <em>*</em>
+    <%= f.email_field :email, class: 'form-control' %>
+    
+    <%= f.label :address %>
+    <em>*</em>
+    <%= f.text_area :address, class: 'form-control' %>
+    
+    <%= f.label :city %>
+    <em>*</em>
+    <%= f.text_area :city, class: 'form-control' %>
+    
+    <%= f.label :zip_code %>
+    <em>*</em>
+    <%= f.text_area :zip_code, class: 'form-control' %>
+    
+    Required fields <em>*</em>
+    <p><%= f.submit "Continue" %></p>
+    <p><%= link_to "Back", cart_path %></p>
+<% end %>

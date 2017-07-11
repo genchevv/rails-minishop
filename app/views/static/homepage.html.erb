@@ -1,0 +1,16 @@
+<div class="jumbotron text-center" id="homepage-jumbotron">
+	<h2>
+		Welcome to the world of Mini Shop!
+	</h2>
+</div>
+
+<% @products.each do |product| %>
+	<div class="col-sm-6 col-md-4">
+		<div class="thumbnail">
+		  <div class="caption text-center">
+		    <%= render 'order_items/order_item', product: product, order_item: @order_item %>
+		  </div>
+		</div>
+	</div>
+<% end %>
+

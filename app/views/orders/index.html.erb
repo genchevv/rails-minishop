@@ -1,0 +1,25 @@
+<h1>Orders</h1>
+
+<% @users.each do |user| %>
+
+    <h2>Order Details</h2>
+    <% user.orders.last.order_items.each do |order_item| %>
+        <h4>Product title: <%= order_item.product.title %></h4>
+        <p>Quantity: <%= order_item.quantity %></p>
+        <p>Unit Price: <%= order_item.price %></p>
+    <% end %>
+
+    <h2>Shipping Details</h2>
+    <p>First Name: <%= user.first_name %></p>
+    <p>Last Name: <%= user.last_name %></p>
+    <p>Email: <%= user.email %></p>
+    <p>Address: <%= user.address %></p>
+    <p>City: <%= user.city %></p>
+    <p>Zip Code: <%= user.zip_code %></p>
+    
+    <h2>Payment Details</h2>
+    <p>Bank Code: <%= user.bank_code %></p>
+    <p>Card Number: <%= user.card_number %></p>
+    
+    <hr>
+<% end %>
